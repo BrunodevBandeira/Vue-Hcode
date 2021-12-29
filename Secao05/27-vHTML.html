@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title> 27 v-html </title>
+<body>
+    <div id="directives">
+        <div v-html="headerHTML"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+
+    <script>
+        let app = new Vue( {
+            el: "#directives",
+            data: { 
+                headerHTML: `
+                    <header> 
+                        <h1 style="text-align: center;"> Hcode Treinamentos </h1>
+                        <img src="./assets/logo-hcode.svg"
+                            style="margin:auto 30%">
+                    </header>
+                `
+            }
+        })
+    /*  v-text: Exibir o valor de uma propriedade da instância Vue no HTML,
+        v-text tem a mesma função da {{ interpolação }} 
+    */
+    </script>
+</body>
+</html>

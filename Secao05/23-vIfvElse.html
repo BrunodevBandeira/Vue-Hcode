@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title> 23 v-if e v-else </title>
+<body>
+    <div id="directives">
+        <h1 v-if="show"> Hcode Treinamentos </h1>
+        <h1 key="available" v-if="tickets >= 50"> Há ingressos disponíveis {{ tickets }}</h1>
+        <h1 key="almost" v-else-if="tickets >= 1"> Os ingressos estão acabando {{ tickets }}</h1>
+        <h1 key="empty" v-else> Não Há ingressos disponíveis {{ tickets }}</h1>
+
+        <!--
+            Repare que existe 3 tags h1, logo, para não haver qualquer tipo de 
+            bug na página precisamos usar uma KEY
+        -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+
+    <script>
+        let app = new Vue( {
+            el: "#directives",
+            data: { 
+                show: true,
+                tickets: 100
+            }
+        })
+    </script>
+</body>
+</html>

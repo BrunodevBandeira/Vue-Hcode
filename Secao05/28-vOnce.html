@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title> 28 v-once </title>
+<body>
+    <div id="directives">
+        <h1>{{ person.name }}</h1>
+        <h1 v-once>{{ person.age }}</h1>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+
+    <script>
+        let app = new Vue( {
+            el: "#directives",
+            data: { 
+                person: {
+                    name: "Evan you",
+                    age: 28
+                }
+            }
+        })
+    /* v-once exibe o valor de uma propriedade da instância Vue apenas uma vez.
+        deixar o elemento statico ajuda na performece. em outras palavras, sempre
+        que aplicamos o v-once, as funções de uma propriedade perdem o seu valor
+
+        No navegador, podemos ver isso na pŕatica, e mesmo que passassemos um novo valor 
+        para o age, não mudaria, pois o v-once não deixa.
+    */
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>16 Definindo um novo valor para computed</title>
+
+<body>
+
+    <div id="app">
+        <h2> Nome: {{ person.firstName }} </h2>
+        <h2> Nome Completo: {{ fullName }}</h2>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+
+    <script>
+        let app = new Vue( {
+            el: "#app",
+            data: {
+                person: {
+                    firstName: "Djalma",
+                    lastName: "Sindeaux"
+                }
+            },
+            computed: {
+                fullName: {
+                    get:function() {
+                        return `${this.person.firstName} ${this.person.lastName}`;
+                    },
+
+                    set:function(newValue) {
+                        let name = newValue.split(" ");
+                        this.person.firstName = name[0];
+                        this.person.lastName = name[1];
+                    }
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title> 29 v-for PArte 2 </title>
+<body>
+    <div id="directives">
+        <!--
+            Podemos usar o v-bind:href ou :href
+        -->
+        <h2>Acesse o site abaixo</h2>
+        <a v-bind:href="url"> Site da Hcode </a>
+
+        <p v-bind:[arg]="value">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Deleniti dicta rerum sunt iure, tempora cumque beatae incidunt 
+            dolorum sit, suscipit voluptas dolores dolore error id vitae 
+            eaque blanditiis! Ad, inventore.
+        </p>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+
+    <script>
+        let app = new Vue( {
+            el: "#directives",
+            data: { 
+                url: "https://www.hcode.com.br",
+                arg: "title",
+                value: "Páragrafo de exemplo"
+            }
+        })
+    </script>
+</body>
+</html>

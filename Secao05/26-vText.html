@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title> 26 v-text </title>
+<body>
+    <div id="directives">
+        <h4>{{ name }}</h4>
+        <h4 v-text="name"></h4>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+
+    <script>
+        let app = new Vue( {
+            el: "#directives",
+            data: { 
+                name: "Bruno Bandeira"
+            }
+        })
+    /*  v-text: Exibir o valor de uma propriedade da instância Vue no HTML,
+        v-text tem a mesma função da {{ interpolação }} 
+    */
+    </script>
+</body>
+</html>

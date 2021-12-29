@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title> 23 v-if e v-else </title>
+<body>
+    <div id="directives">
+        <h1 v-show="isLogged"> V-SHOW: Seja bem vindo à nossa Área Administrativa </h1>
+        <h1 v-if="isLogged"> V-IF:  Seja bem vindo à nossa Área Administrativa </h1>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+
+    <script>
+        let app = new Vue( {
+            el: "#directives",
+            data: { 
+                isLogged:true
+            }
+        })
+    /*  v-show: Define se uma tag deve ser exibida ou não, com base em uma condição.
+        
+        QUAL A DIFERENÇA ENETRE O V-IF E O V-SHOW
+        
+        v-if: Insere ou remove um elemento
+        v-show: Exibe ou esconde um elemento(muda a propriedade CSS display da tag)
+    */
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title> 29 v-for PArte 2 </title>
+<body>
+    <div id="directives">
+        <h2> Cidades do mundo </h2>
+        <ol>
+
+            <li v-for="item in cities">
+                {{ item.city }} - {{ item.country }}
+            </li>
+        </ol>
+
+        <h2> Grandes Filmes da História </h2>
+        <ul>
+            <li v-for="(picture, index) in movies">  
+                {{ index }} {{ picture }}
+            </li>
+        </ul>
+        <h2>Empresa </h2>
+        <p v-for="(value, key, index) in company">
+            {{ key }}: {{ value }}
+        </p>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+
+    <script>
+        let app = new Vue( {
+            el: "#directives",
+            data: { 
+                cities:[{
+                    city: "Nova York",
+                    country: "EUA",
+                }, {
+                    city: "São Paulo",
+                    country: "Brasil",
+                }, {
+                    city: "Londres",
+                    country: "Inglaterra",
+                }, {
+                    city: "Rio de Janeiro",
+                    country: "Brasil",
+                }], // => Array de obj
+                movies: [
+                    'Star Wars', 
+                    'Jurrassic Park', 
+                    'De volta para o futuro'
+                ],
+                company: {
+                    name:" FaceBook",
+                    year: 2004,
+                    creator: "Mark"
+                }
+            }
+        })
+    /* v-once exibe o valor de uma propriedade da instância Vue apenas uma vez.
+        deixar o elemento statico ajuda na performece. em outras palavras, sempre
+        que aplicamos o v-once, as funções de uma propriedade perdem o seu valor
+
+        No navegador, podemos ver isso na pŕatica, e mesmo que passassemos um novo valor 
+        para o age, não mudaria, pois o v-once não deixa.
+    */
+    </script>
+</body>
+</html>
